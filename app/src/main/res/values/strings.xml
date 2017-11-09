@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Demo_AndroidPlatform</string>
+    <string name="notification_title">Notification title</string>
+    <string name="notification_body">Notification body</string>
 </resources>

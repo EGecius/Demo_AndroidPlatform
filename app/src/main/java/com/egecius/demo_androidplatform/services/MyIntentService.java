@@ -5,7 +5,6 @@ import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.egecius.demo_androidplatform.DetailActivity;
@@ -30,7 +29,7 @@ public class MyIntentService extends IntentService {
     }
 
     @Override
-    protected void onHandleIntent(@Nullable Intent intent) {
+    protected void onHandleIntent(Intent intent) {
         Log.i("Eg:MyIntentService:24", "onHandleIntent ");
         printContext();
 

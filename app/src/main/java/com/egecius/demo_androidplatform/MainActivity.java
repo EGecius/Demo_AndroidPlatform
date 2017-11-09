@@ -9,6 +9,9 @@ import com.egecius.demo_androidplatform.services.MyIntentService;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final NotificationSender mNotificationSender = new NotificationSender(
+            MyApplication.appContext);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +25,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startIntentService();
+            }
+        });
+        findViewById(R.id.send_notification).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mNotificationSender.sendNotification();
             }
         });
     }
