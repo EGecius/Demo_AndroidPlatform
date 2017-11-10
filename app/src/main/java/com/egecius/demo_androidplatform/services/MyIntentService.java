@@ -2,6 +2,7 @@ package com.egecius.demo_androidplatform.services;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
+import android.app.Application;
 import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
@@ -20,18 +21,20 @@ public class MyIntentService extends IntentService {
     public MyIntentService() {
         super(TAG);
         Log.i("Eg:MyIntentService:23", "MyIntentService ");
-        printContext();
+        print();
     }
 
-    private void printContext() {
+    private void print() {
         Context context = getBaseContext();
-        Log.i("Eg:MyIntentService:28", "printContext context " + context);
+        Log.i("Eg:MyIntentService:28", "print context " + context);
+        Application application = getApplication();
+        Log.i("Eg:MyIntentService:31", "print application " + application);
     }
 
     @Override
     protected void onHandleIntent(Intent intent) {
         Log.i("Eg:MyIntentService:24", "onHandleIntent ");
-        printContext();
+        print();
 
         startActivity();
     }
