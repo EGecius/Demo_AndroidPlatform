@@ -18,21 +18,21 @@ public class MyFragmentActivity extends FragmentActivity {
     private void addFragment1() {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new Fragment1())
-                .addToBackStack(null)
+//                .addToBackStack(null)
                 .commit();
     }
 
     void showFragment2() {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new Fragment2())
-                .addToBackStack(null)
+//                .addToBackStack(null)
                 .commit();
     }
 
     void showFragment3() {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new Fragment3())
-                .addToBackStack(null)
+//                .addToBackStack(null)
                 .commit();
     }
 }
