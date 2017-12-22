@@ -24,7 +24,7 @@ public class MyFragmentActivity extends FragmentActivity {
 
     void showFragment2() {
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new Fragment2())
+                .replace(R.id.container, new Fragment3())
                 .addToBackStack(null)
                 .commit();
     }
