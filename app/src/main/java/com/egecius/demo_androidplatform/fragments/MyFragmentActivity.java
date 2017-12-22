@@ -16,11 +16,15 @@ public class MyFragmentActivity extends FragmentActivity {
     }
 
     private void addFragment1() {
-
-        Fragment1 fragment = new Fragment1();
-
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, fragment)
+                .replace(R.id.container, new Fragment1())
+                .addToBackStack(null)
+                .commit();
+    }
+
+    void showFragment2() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new Fragment2())
                 .addToBackStack(null)
                 .commit();
     }
