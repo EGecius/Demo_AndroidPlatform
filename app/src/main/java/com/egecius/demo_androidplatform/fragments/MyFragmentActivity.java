@@ -1,5 +1,7 @@
 package com.egecius.demo_androidplatform.fragments;
 
+import static android.support.v4.app.FragmentManager.POP_BACK_STACK_INCLUSIVE;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -41,12 +43,12 @@ public class MyFragmentActivity extends FragmentActivity {
 
     void showFragment2() {
         Log.v("Eg:MyFragmentActivity:40", "showFragment2");
-        replaceFragment(new Fragment2(), false, TAG_FRAGMENT_2);
+        replaceFragment(new Fragment2(), true, TAG_FRAGMENT_2);
     }
 
     void showFragment3() {
         Log.v("Eg:MyFragmentActivity:45", "showFragment3");
-        replaceFragment(new Fragment3(), false, TAG_FRAGMENT_3);
+        replaceFragment(new Fragment3(), true, TAG_FRAGMENT_3);
     }
 
     private void replaceFragment(Fragment fragment, boolean useBackStack, String tag) {
@@ -59,5 +61,9 @@ public class MyFragmentActivity extends FragmentActivity {
         }
 
         transaction.commit();
+    }
+
+    void popTransactionFragment2() {
+        getSupportFragmentManager().popBackStack(TAG_FRAGMENT_2, POP_BACK_STACK_INCLUSIVE);
     }
 }

@@ -15,6 +15,17 @@ public class Fragment3 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment3, container, false);
+        View view = inflater.inflate(R.layout.fragment3, container, false);
+        view.findViewById(R.id.pop_fragment_2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popTransactionFragment2();
+            }
+        });
+        return view;
+    }
+
+    private void popTransactionFragment2() {
+        ((MyFragmentActivity) getActivity()).popTransactionFragment2();
     }
 }
