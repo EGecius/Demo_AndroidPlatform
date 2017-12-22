@@ -10,8 +10,6 @@ import com.egecius.demo_androidplatform.R;
 
 public class MyFragmentActivity extends FragmentActivity {
 
-    boolean useBackStack = false;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,19 +18,14 @@ public class MyFragmentActivity extends FragmentActivity {
     }
 
     private void addFragment1() {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.container, new Fragment1())
-//                .addToBackStack(null)
-                .commit();
+        replaceFragment(new Fragment1(), false);
     }
 
     void showFragment2() {
-        Fragment2 fragment = new Fragment2();
-        replaceFragment(fragment);
+        replaceFragment(new Fragment2(), false);
     }
 
-    private void replaceFragment(Fragment fragment) {
+    private void replaceFragment(Fragment fragment, boolean useBackStack) {
         FragmentTransaction transaction = getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.container, fragment);
@@ -45,7 +38,6 @@ public class MyFragmentActivity extends FragmentActivity {
     }
 
     void showFragment3() {
-        Fragment3 fragment = new Fragment3();
-        replaceFragment(fragment);
+        replaceFragment(new Fragment3(), false);
     }
 }
