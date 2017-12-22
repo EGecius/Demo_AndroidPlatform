@@ -22,6 +22,10 @@
 
         <activity android:name=".DetailActivity">
         </activity>
+
+        <activity android:name=".fragments.MyFragmentActivity"/>
+
+
     </application>
 
 </manifest>
