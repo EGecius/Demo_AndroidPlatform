@@ -12,6 +12,10 @@ import com.egecius.demo_androidplatform.R;
 
 public class MyFragmentActivity extends FragmentActivity {
 
+    private static final String TAG_FRAGMENT_1 = "Fragment1";
+    private static final String TAG_FRAGMENT_2 = "Fragment2";
+    private static final String TAG_FRAGMENT_3 = "Fragment3";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,26 +36,26 @@ public class MyFragmentActivity extends FragmentActivity {
 
     private void addFragment1() {
         Log.v("Eg:MyFragmentActivity:35", "addFragment1");
-        replaceFragment(new Fragment1(), true);
+        replaceFragment(new Fragment1(), true, TAG_FRAGMENT_1);
     }
 
     void showFragment2() {
         Log.v("Eg:MyFragmentActivity:40", "showFragment2");
-        replaceFragment(new Fragment2(), false);
+        replaceFragment(new Fragment2(), false, TAG_FRAGMENT_2);
     }
 
     void showFragment3() {
         Log.v("Eg:MyFragmentActivity:45", "showFragment3");
-        replaceFragment(new Fragment3(), false);
+        replaceFragment(new Fragment3(), false, TAG_FRAGMENT_3);
     }
 
-    private void replaceFragment(Fragment fragment, boolean useBackStack) {
+    private void replaceFragment(Fragment fragment, boolean useBackStack, String tag) {
         FragmentTransaction transaction = getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.container, fragment);
 
         if (useBackStack) {
-            transaction.addToBackStack(null);
+            transaction.addToBackStack(tag);
         }
 
         transaction.commit();
