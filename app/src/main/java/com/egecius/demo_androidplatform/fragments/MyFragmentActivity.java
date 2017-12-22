@@ -2,11 +2,15 @@ package com.egecius.demo_androidplatform.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 
 import com.egecius.demo_androidplatform.R;
 
 public class MyFragmentActivity extends FragmentActivity {
+
+    boolean useBackStack = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -24,18 +28,24 @@ public class MyFragmentActivity extends FragmentActivity {
     }
 
     void showFragment2() {
-        getSupportFragmentManager()
+        Fragment2 fragment = new Fragment2();
+        replaceFragment(fragment);
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.container, new Fragment2())
-//                .addToBackStack(null)
-                .commit();
+                .replace(R.id.container, fragment);
+
+        if (useBackStack) {
+            transaction.addToBackStack(null);
+        }
+
+        transaction.commit();
     }
 
     void showFragment3() {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.container, new Fragment3())
-//                .addToBackStack(null)
-                .commit();
+        Fragment3 fragment = new Fragment3();
+        replaceFragment(fragment);
     }
 }
