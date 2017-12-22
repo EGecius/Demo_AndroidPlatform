@@ -18,7 +18,7 @@ public class MyFragmentActivity extends FragmentActivity {
     }
 
     private void addFragment1() {
-        replaceFragment(new Fragment1(), false);
+        replaceFragment(new Fragment1(), true);
     }
 
     void showFragment2() {
