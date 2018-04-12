@@ -11,8 +11,6 @@ class MyApplication : Application() {
     }
 
     companion object {
-
-        var appContext: Context? = null
-            private set
+        lateinit var appContext: Context
     }
 }

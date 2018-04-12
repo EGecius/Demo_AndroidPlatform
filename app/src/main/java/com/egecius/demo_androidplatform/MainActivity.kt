@@ -21,7 +21,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun setOnClickListener() {
         findViewById<View>(R.id.start_intent_service).setOnClickListener { startIntentService() }
-        findViewById<View>(R.id.send_notification).setOnClickListener { mNotificationSender.sendNotification() }
+        findViewById<View>(R.id.send_notification).setOnClickListener { sendNotification() }
+    }
+
+    private fun sendNotification() {
+        mNotificationSender.sendNotification()
     }
 
     private fun startIntentService() {
