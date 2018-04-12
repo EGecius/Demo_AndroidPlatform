@@ -41,6 +41,6 @@ class MyIntentService : IntentService(TAG) {
 
     companion object {
 
-        val TAG = MyIntentService::class.java!!.getSimpleName()
+        val TAG = MyIntentService::class.java.getSimpleName()
     }
 }
