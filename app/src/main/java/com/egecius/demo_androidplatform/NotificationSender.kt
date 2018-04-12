@@ -28,7 +28,6 @@ internal class NotificationSender(private val context: Context) {
                 .setContentIntent(pendingIntent)
                 .build()
 
-
         mNotificationManager.notify(ID_NOTIFICATION, notification)
     }
 
