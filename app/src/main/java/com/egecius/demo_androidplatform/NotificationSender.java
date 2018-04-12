@@ -29,6 +29,7 @@ class NotificationSender {
         String title = context.getString(R.string.notification_title);
         String body = context.getString(R.string.notification_body);
 
+        @SuppressWarnings("deprecation")
         Notification notification = new NotificationCompat.Builder(context)
                 .setContentTitle(title)
                 .setSmallIcon(R.drawable.notification_icon)
