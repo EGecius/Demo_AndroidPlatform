@@ -34,8 +34,8 @@ internal class NotificationSender(private val context: Context) {
 
     companion object {
 
-        private val REQUEST_CODE = 123
-        private val ID_NOTIFICATION = 42
-        private val ID_CHANNEL = "823"
+        private const val REQUEST_CODE = 123
+        private const val ID_NOTIFICATION = 42
+        private const val ID_CHANNEL = "823"
     }
 }
