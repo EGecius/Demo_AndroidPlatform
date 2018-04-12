@@ -10,7 +10,7 @@ import com.egecius.demo_androidplatform.services.MyIntentService
 class MainActivity : AppCompatActivity() {
 
     private val mNotificationSender = NotificationSender(
-            MyApplication.appContext)
+            MyApplication.getAppContext())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
