@@ -20,7 +20,7 @@ internal class NotificationSender(private val context: Context) {
         val title = context.getString(R.string.notification_title)
         val body = context.getString(R.string.notification_body)
 
-        val notification = NotificationCompat.Builder(context)
+        val notification = NotificationCompat.Builder(context, ID_CHANNEL)
                 .setContentTitle(title)
                 .setSmallIcon(R.drawable.notification_icon)
                 .setContentText(body)
@@ -36,5 +36,6 @@ internal class NotificationSender(private val context: Context) {
 
         private val REQUEST_CODE = 123
         private val ID_NOTIFICATION = 42
+        private val ID_CHANNEL = "823"
     }
 }
