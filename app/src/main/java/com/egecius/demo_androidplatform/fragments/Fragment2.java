@@ -11,7 +11,6 @@ import com.egecius.demo_androidplatform.R;
 
 public class Fragment2 extends Fragment {
 
-    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState) {
