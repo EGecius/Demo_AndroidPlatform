@@ -10,9 +10,9 @@ import com.egecius.demo_androidplatform.R
 
 class Fragment2 : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val view = inflater!!.inflate(R.layout.fragment2, container, false)
+        val view = inflater.inflate(R.layout.fragment2, container, false)
 
         setOnClickListener(view)
 
