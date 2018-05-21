@@ -26,6 +26,7 @@
 
         <activity android:name=".fragments.MyFragmentActivity">
         </activity>
+        <activity android:name=".ViewStubActivity"/>
 
 
     </application>
