@@ -15,6 +15,7 @@
         android:id="@+id/my_view_stub"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="@android:color/holo_green_light"/>
+        android:background="@android:color/holo_green_light"
+        android:inflatedId="@+id/id_of_injected_view"/>
 
 </LinearLayout>
