@@ -23,8 +23,19 @@ class MyService : Service() {
     }
 
     override fun onBind(intent: Intent?): IBinder? {
+        Log.v("Eg:MyService:26", "onBind ")
         // not to be implemented
         return null
+    }
+
+    override fun onCreate() {
+        Log.d("Eg:MyService:32", "onCreate ")
+        super.onCreate()
+    }
+
+    override fun onDestroy() {
+        Log.w("Eg:MyService:37", "onDestroy ")
+        super.onDestroy()
     }
 
 }
