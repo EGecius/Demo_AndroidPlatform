@@ -2,6 +2,7 @@ package com.egecius.demo_androidplatform.services
 
 import android.app.Service
 import android.content.Intent
+import android.os.Handler
 import android.os.IBinder
 import android.util.Log
 import android.widget.Toast
@@ -14,7 +15,16 @@ class MyService : Service() {
         print()
         Toast.makeText(this, "MyService started", Toast.LENGTH_SHORT).show()
 
+        scheduleStopping()
+
         return super.onStartCommand(intent, flags, startId)
+    }
+
+    private fun scheduleStopping() {
+        Handler().postDelayed({
+            Log.w("Eg:MyService:25", "about to call stopSelf ")
+            stopSelf()
+        }, 3000)
     }
 
     private fun print() {
