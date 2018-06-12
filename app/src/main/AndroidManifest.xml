@@ -20,17 +20,25 @@
 
         </activity>
 
-        <service android:name=".services.MyIntentService"/>
+        <service
+            android:name=".services.MyIntentService"
+            android:exported="false"/>
 
-        <activity android:name=".DetailActivity">
+        <service
+            android:name=".services.MyService"
+            android:exported="false"/>
+
+        <activity
+            android:name=".DetailActivity">
         </activity>
 
-        <activity android:name=".fragments.MyFragmentActivity">
-        </activity>
-        <activity android:name=".ViewStubActivity">
-
+        <activity
+            android:name=".fragments.MyFragmentActivity">
         </activity>
 
+        <activity
+            android:name=".ViewStubActivity">
+        </activity>
 
     </application>
 
