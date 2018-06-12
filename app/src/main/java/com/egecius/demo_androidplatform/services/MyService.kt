@@ -15,9 +15,33 @@ class MyService : Service() {
         print()
         Toast.makeText(this, "MyService started", Toast.LENGTH_SHORT).show()
 
-        scheduleStopping()
+//        scheduleStopping()
+        scheduleHeavyOperation()
 
         return super.onStartCommand(intent, flags, startId)
+    }
+
+    private fun scheduleHeavyOperation() {
+    	Log.v("Eg:MyService:26", "scheduleHeavyOperation")
+
+        Handler().postDelayed( {
+            doHeavyOperation()
+            scheduleHeavyOperation()
+        }, 3000)
+    }
+
+    private fun doHeavyOperation() {
+        val time0 = System.currentTimeMillis()
+
+        var count = 0L
+        while (count < 1000000000) {
+            count += 1
+        }
+
+        val time1 = System.currentTimeMillis()
+
+        val diff = time1 - time0
+        Log.i("Eg:MyService:39", "doHeavyOperation diff $diff")
     }
 
     private fun scheduleStopping() {
