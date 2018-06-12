@@ -1,13 +1,9 @@
 package com.egecius.demo_androidplatform.services
 
-import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
-
-import android.app.Application
 import android.app.IntentService
-import android.content.Context
 import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.util.Log
-
 import com.egecius.demo_androidplatform.DetailActivity
 
 class MyIntentService : IntentService(TAG) {
@@ -24,6 +20,9 @@ class MyIntentService : IntentService(TAG) {
         Log.i("Eg:MyIntentService:28", "print context $context")
         val application = application
         Log.i("Eg:MyIntentService:31", "print application $application")
+
+        val threadName = Thread.currentThread().name
+        Log.i("Eg:MyIntentService:25", "print threadName $threadName")
     }
 
     override fun onHandleIntent(intent: Intent?) {
