@@ -27,7 +27,7 @@ class MyService : Service() {
         Handler().postDelayed( {
             doHeavyOperation()
             scheduleHeavyOperation()
-        }, 3000)
+        }, 1000)
     }
 
     private fun doHeavyOperation() {
