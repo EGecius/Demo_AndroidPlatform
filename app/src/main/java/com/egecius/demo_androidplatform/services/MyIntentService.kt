@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.util.Log
 import com.egecius.demo_androidplatform.DetailActivity
+import com.egecius.demo_androidplatform.printThreadName
 
 class MyIntentService : IntentService(TAG) {
     /**
@@ -21,8 +22,7 @@ class MyIntentService : IntentService(TAG) {
         val application = application
         Log.i("Eg:MyIntentService:31", "print application $application")
 
-        val threadName = Thread.currentThread().name
-        Log.d("Eg:MyIntentService:25", "print threadName $threadName")
+        printThreadName(this, "print")
     }
 
     override fun onHandleIntent(intent: Intent?) {
