@@ -27,7 +27,11 @@
         <service
             android:name=".services.MyService"
             android:exported="false"/>
-        <service android:name=".services.MyJobService"/>
+
+        <service
+            android:name=".services.MyJobService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
 
         <activity
             android:name=".DetailActivity">
