@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 
 import com.egecius.demo_androidplatform.services.MyIntentService
-import com.egecius.demo_androidplatform.services.MyJobShedulerHelper
+import com.egecius.demo_androidplatform.services.MyJobSchedulerHelper
 import com.egecius.demo_androidplatform.services.MyService
 
 class MainActivity : AppCompatActivity() {
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startJobScheduler() {
-        MyJobShedulerHelper(applicationContext).scheduleJob()
+        MyJobSchedulerHelper(applicationContext).scheduleJob()
     }
 
     private fun startNormalService() {

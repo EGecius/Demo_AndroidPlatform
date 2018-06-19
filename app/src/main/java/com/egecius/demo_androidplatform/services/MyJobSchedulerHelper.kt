@@ -6,8 +6,7 @@ import android.app.job.JobScheduler
 import android.content.ComponentName
 import android.content.Context
 
-class MyJobShedulerHelper(val context: Context) {
-
+class MyJobSchedulerHelper(val context: Context) {
 
     @SuppressLint("NewApi")
     fun scheduleJob() {
