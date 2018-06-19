@@ -27,6 +27,7 @@
         <service
             android:name=".services.MyService"
             android:exported="false"/>
+        <service android:name=".services.MyJobService"/>
 
         <activity
             android:name=".DetailActivity">
