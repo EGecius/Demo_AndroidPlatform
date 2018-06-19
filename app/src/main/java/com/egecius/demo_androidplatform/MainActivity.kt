@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 
 import com.egecius.demo_androidplatform.services.MyIntentService
+import com.egecius.demo_androidplatform.services.MyJobShedulerHelper
 import com.egecius.demo_androidplatform.services.MyService
 
 class MainActivity : AppCompatActivity() {
@@ -21,9 +22,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setOnClickListener() {
+        findViewById<View>(R.id.start_job_scheduler).setOnClickListener { startJobScheduler() }
         findViewById<View>(R.id.start_service).setOnClickListener { startNormalService() }
         findViewById<View>(R.id.start_intent_service).setOnClickListener { startIntentService() }
         findViewById<View>(R.id.send_notification).setOnClickListener { sendNotification() }
+    }
+
+    private fun startJobScheduler() {
+        MyJobShedulerHelper(applicationContext).scheduleJob()
     }
 
     private fun startNormalService() {
