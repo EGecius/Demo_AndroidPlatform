@@ -6,12 +6,14 @@ import android.os.Handler
 import android.support.v4.app.JobIntentService
 import android.widget.Toast.LENGTH_SHORT
 import android.widget.Toast.makeText
+import com.egecius.demo_androidplatform.printThreadName
 
 class MyJobIntentService : JobIntentService() {
 
     private val mHandler = Handler()
 
     override fun onHandleWork(intent: Intent) {
+        printThreadName(this, "onHandleWork")
         sendToast("onHandleWork. Will sleep for 3s")
         sleepFor3Secs()
     }
