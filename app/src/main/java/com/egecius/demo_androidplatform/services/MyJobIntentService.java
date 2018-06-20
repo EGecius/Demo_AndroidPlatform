@@ -15,10 +15,9 @@ public class MyJobIntentService extends JobIntentService {
     /**
      * Convenience method for enqueuing work in to this service.
      */
-    static void enqueueWork(Context context, Intent work) {
+    public static void enqueueWork(Context context, Intent work) {
         enqueueWork(context, MyJobIntentService.class, JOB_ID, work);
     }
-
 
     @Override
     protected void onHandleWork(Intent intent) {
