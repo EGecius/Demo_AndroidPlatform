@@ -7,6 +7,26 @@
     android:orientation="vertical"
     tools:context="com.egecius.demo_androidplatform.MainActivity">
 
+
+    <Button
+        android:id="@+id/start_job_intent_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start JobScheduler"/>
+
+
+    <Button
+        android:id="@+id/start_job_scheduler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start JobScheduler"/>
+
+    <Button
+        android:id="@+id/start_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Service"/>
+
     <Button
         android:id="@+id/start_intent_service"
         android:layout_width="wrap_content"
@@ -18,6 +38,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Send notification"/>
-
 
 </LinearLayout>

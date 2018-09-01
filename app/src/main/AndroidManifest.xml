@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.egecius.demo_androidplatform">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -12,17 +14,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
 
-        </activity>
-
-        <service android:name=".services.MyIntentService"/>
-
-        <activity android:name=".DetailActivity">
-        </activity>
-
-        <activity android:name=".fragments.MyFragmentActivity">
-        </activity>
-        <activity android:name=".ViewStubActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -31,6 +22,35 @@
 
         </activity>
 
+        <service
+            android:name=".services.MyIntentService"
+            android:exported="false"/>
+
+        <service
+            android:name=".services.MyService"
+            android:exported="false"/>
+
+        <service
+            android:name=".services.MyJobService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+
+        <service
+            android:name=".services.MyJobIntentService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+
+        <activity
+            android:name=".DetailActivity">
+        </activity>
+
+        <activity
+            android:name=".fragments.MyFragmentActivity">
+        </activity>
+
+        <activity
+            android:name=".ViewStubActivity">
+        </activity>
 
     </application>
 
