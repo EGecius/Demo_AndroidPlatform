@@ -1,7 +1,8 @@
-package com.egecius.demo_androidplatform
+package com.egecius.demo_androidplatform.bottomnavigation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.egecius.demo_androidplatform.R
 
 class BottomNavigationActivity : AppCompatActivity() {
 

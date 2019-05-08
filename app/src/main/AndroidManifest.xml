@@ -48,7 +48,7 @@
             android:name=".ViewStubActivity">
         </activity>
 
-        <activity android:name=".BottomNavigationActivity">
+        <activity android:name=".bottomnavigation.BottomNavigationActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
