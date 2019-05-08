@@ -1,9 +1,9 @@
 package com.egecius.demo_androidplatform.fragments
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentActivity
-import android.support.v4.app.FragmentManager.POP_BACK_STACK_INCLUSIVE
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE
 import android.util.Log
 import com.egecius.demo_androidplatform.R
 

@@ -3,7 +3,7 @@ package com.egecius.demo_androidplatform.services
 import android.content.Context
 import android.content.Intent
 import android.os.Handler
-import android.support.v4.app.JobIntentService
+import androidx.core.app.JobIntentService
 import android.widget.Toast.LENGTH_SHORT
 import android.widget.Toast.makeText
 import com.egecius.demo_androidplatform.printThreadName
