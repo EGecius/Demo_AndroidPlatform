@@ -12,19 +12,16 @@ import java.lang.reflect.Field;
 
 public class BottomNavigationHelper {
 
-    @SuppressLint("RestrictedApi")
+    @SuppressLint({"RestrictedApi", "LongLogTag"})
     public static void disableShiftMode(BottomNavigationView view) {
+        Log.v("Eg:BottomNavigationHelper:17", "disableShiftMode");
 
         BottomNavigationMenuView menuView = (BottomNavigationMenuView) view.getChildAt(0);
         try {
-            Field shiftingMode = menuView.getClass().getDeclaredField("mShiftingMode");
-            shiftingMode.setAccessible(true);
-            shiftingMode.setBoolean(menuView, false);
-            shiftingMode.setAccessible(false);
             for (int i = 0; i < menuView.getChildCount(); i++) {
                 BottomNavigationItemView item = (BottomNavigationItemView) menuView.getChildAt(i);
 
-                Field shiftAmount = item.getClass().getDeclaredField("mShiftAmount");
+                Field shiftAmount = item.getClass().getDeclaredField("shiftAmount");
                 shiftAmount.setAccessible(true);
                 shiftAmount.setInt(item, 0);
                 shiftAmount.setAccessible(false);
@@ -32,9 +29,9 @@ public class BottomNavigationHelper {
                 item.setChecked(item.getItemData().isChecked());
             }
         } catch (NoSuchFieldException e) {
-            Log.e(e.toString(), "Unable to get fields");
+            Log.i("Eg:BottomNavigationHelper:35", "disableShiftMode e " + e);
         } catch (IllegalAccessException e) {
-            Log.e(e.toString(), "Unable to change values");
+            Log.i("Eg:BottomNavigationHelper:37", "disableShiftMode e " + e);
         }
     }
 }
