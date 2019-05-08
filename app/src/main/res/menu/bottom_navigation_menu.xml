@@ -1,33 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto">
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:ignore="AlwaysShowAction,HardcodedText">
 
     <item
         android:id="@+id/action_dashboard"
         android:enabled="true"
         android:icon="@drawable/ic_dashboard"
-        android:title="dashboard"
-        app:showAsAction="always" />
+        android:title="Dashboard"
+        app:showAsAction="always"/>
 
     <item
         android:id="@+id/action_billing"
         android:enabled="true"
         android:icon="@drawable/ic_billing"
-        android:title="billing"
-        app:showAsAction="always" />
+        android:title="Billing"
+        app:showAsAction="always"/>
 
     <item
         android:id="@+id/action_help"
         android:enabled="true"
         android:icon="@drawable/ic_help"
-        android:title="help"
-        app:showAsAction="always" />
+        android:title="Help"
+        app:showAsAction="always"/>
 
     <item
         android:id="@+id/action_account"
         android:enabled="true"
         android:icon="@drawable/ic_account"
-        android:title="account"
-        app:showAsAction="always" />
+        android:title="Account"
+        app:showAsAction="always"/>
 
 </menu>
