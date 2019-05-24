@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:ignore="AlwaysShowAction,HardcodedText">
+
+    <item
+        android:id="@+id/action_dashboard"
+        android:enabled="true"
+        android:icon="@drawable/outline_dashboard_black_24"
+        android:title="Dashboard"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_billing"
+        android:enabled="true"
+        android:icon="@drawable/outline_account_balance_wallet_black_36"
+        android:title="Billing"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_help"
+        android:enabled="true"
+        android:icon="@drawable/outline_help_outline_black_24"
+        android:title="Help"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_account"
+        android:enabled="true"
+        android:icon="@drawable/outline_account_circle_black_24"
+        android:title="Account"
+        app:showAsAction="always"/>
+
+</menu>

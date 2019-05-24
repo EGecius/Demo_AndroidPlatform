@@ -2,7 +2,8 @@ package com.egecius.demo_androidplatform
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 
 import com.egecius.demo_androidplatform.services.MyIntentService
@@ -28,6 +29,17 @@ class MainActivity : AppCompatActivity() {
         findViewById<View>(R.id.start_service).setOnClickListener { startNormalService() }
         findViewById<View>(R.id.start_intent_service).setOnClickListener { startIntentService() }
         findViewById<View>(R.id.send_notification).setOnClickListener { sendNotification() }
+        findViewById<View>(R.id.show_dialog).setOnClickListener { showDialog() }
+    }
+
+    private fun showDialog() {
+
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        builder.setMessage("my message")
+                .setPositiveButton("positive button") { _, _ -> }
+                .setNegativeButton("negative button") { _, _ -> }
+
+        builder.create().show()
     }
 
     private fun startJobIntentService() {
