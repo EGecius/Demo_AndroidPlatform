@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.egecius.demo_androidplatform">
+<manifest package="com.egecius.demo_androidplatform"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
@@ -49,7 +49,9 @@
         </activity>
 
         <activity android:name=".bottomnavigation.BottomNavigationActivity">
+        </activity>
 
+        <activity android:name=".dialogs.MyDialogsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -57,7 +59,6 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".dialogs.MyDialogsActivity"/>
 
     </application>
 
