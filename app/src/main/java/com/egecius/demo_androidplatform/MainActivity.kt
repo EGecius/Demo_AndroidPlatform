@@ -2,6 +2,7 @@ package com.egecius.demo_androidplatform
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -67,6 +68,15 @@ class MainActivity : AppCompatActivity() {
     private fun startMyActivityForResult() {
         val intent = Intent(this, MyActivityForResult::class.java)
         startActivityForResult(intent, MyActivityForResult.REQUEST_CODE)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
+        super.onActivityResult(requestCode, resultCode, intent)
+        Log.i("Eg:MainActivity:74", "onActivityResult requestCode: $requestCode")
+        Log.i("Eg:MainActivity:76", "onActivityResult resultCode: $resultCode")
+
+        val result = intent?.extras?.getString(MyActivityForResult.KEY_RESULT)
+        Log.d("Eg:MainActivity:81", "onActivityResult result: $result")
     }
 
 }
