@@ -12,12 +12,20 @@ class MyActivityForResult : AppCompatActivity() {
         setContentView(R.layout.activity_for_result)
 
         deliver_result.setOnClickListener {
-            val resultText = edit_text.text.toString()
-            val data = Intent()
-            data.putExtra(KEY_RESULT, resultText)
-            setResult(RESULT_CODE_SUCCESS, data)
-            finish()
+            closeActivityWithResult()
         }
+    }
+
+    private fun closeActivityWithResult() {
+        val resultText = edit_text.text.toString()
+        val data = Intent()
+        data.putExtra(KEY_RESULT, resultText)
+        setResult(RESULT_CODE_SUCCESS, data)
+        finish()
+    }
+
+    override fun onBackPressed() {
+        closeActivityWithResult()
     }
 
     companion object {
