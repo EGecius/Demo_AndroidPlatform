@@ -2,10 +2,9 @@ package com.egecius.demo_androidplatform
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import android.view.View
-
 import com.egecius.demo_androidplatform.services.MyIntentService
 import com.egecius.demo_androidplatform.services.MyJobIntentService
 import com.egecius.demo_androidplatform.services.MyJobSchedulerHelper
@@ -30,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<View>(R.id.start_intent_service).setOnClickListener { startIntentService() }
         findViewById<View>(R.id.send_notification).setOnClickListener { sendNotification() }
         findViewById<View>(R.id.show_dialog).setOnClickListener { showDialog() }
+        findViewById<View>(R.id.activity_for_result).setOnClickListener { startMyActivityForResult() }
     }
 
     private fun showDialog() {
@@ -63,4 +63,10 @@ class MainActivity : AppCompatActivity() {
     private fun sendNotification() {
         mNotificationSender.sendNotification()
     }
+
+    private fun startMyActivityForResult() {
+        val intent = Intent(this, MyActivityForResult::class.java)
+        startActivityForResult(intent, MyActivityForResult.REQUEST_CODE)
+    }
+
 }

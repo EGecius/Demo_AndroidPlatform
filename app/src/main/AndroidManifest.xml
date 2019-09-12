@@ -56,9 +56,9 @@
         </activity>
 
         <activity android:name=".bottomnavigation.BottomNavigationActivity">
-
-
         </activity>
+
+        <activity android:name=".MyActivityForResult" />
 
     </application>
 
