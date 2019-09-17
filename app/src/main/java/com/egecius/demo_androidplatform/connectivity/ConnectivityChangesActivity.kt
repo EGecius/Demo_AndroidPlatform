@@ -14,7 +14,8 @@ class ConnectivityChangesActivity : AppCompatActivity() {
     }
 
     private fun registerForConnectivityChanges() {
-        val intentFilter = IntentFilter("android.net.conn.CONNECTIVITY_CHANGE")
+        val action = "android.net.conn.CONNECTIVITY_CHANGE"
+        val intentFilter = IntentFilter(action)
         registerReceiver(NetworkBroadcastReceiver(), intentFilter)
     }
 }
