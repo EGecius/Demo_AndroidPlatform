@@ -11,16 +11,14 @@ const val TYPE_NOT_CONNECTED = "TYPE_NOT_CONNECTED"
 
 const val STATUS_CONNECTED = "STATUS_CONNECTED"
 const val STATUS_NOT_CONNECTED = "STATUS_NOT_CONNECTED"
-const val STATUS_UNKNOWN = "STATUS_UNKNOWN"
-
 
 fun getConnectivityStatus(context: Context): String {
     val connectivityManager = context.getSystemService(CONNECTIVITY_SERVICE)
             as ConnectivityManager
 
-    val activeNetwork = connectivityManager.activeNetworkInfo ?: return STATUS_UNKNOWN
+    val activeNetworkInfo = connectivityManager.activeNetworkInfo ?: return STATUS_NOT_CONNECTED
 
-    return if (activeNetwork.isConnected) {
+    return if (activeNetworkInfo.isConnected) {
         STATUS_CONNECTED
     } else {
         STATUS_NOT_CONNECTED
