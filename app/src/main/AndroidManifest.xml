@@ -3,6 +3,7 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="com.egecius.demo_androidplatform">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
     <application
@@ -59,6 +60,7 @@
         </activity>
 
         <activity android:name=".MyActivityForResult" />
+        <activity android:name=".connectivity.ConnectivityChangesActivity" />
 
     </application>
 
