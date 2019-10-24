@@ -5,9 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".bottomsheet.BottomSheetActivity">
 
-    <!-- include app bar -->
-    <include layout="@layout/app_bar" />
-
     <!-- include main content -->
     <include layout="@layout/activity_bottom_sheet_content" />
 

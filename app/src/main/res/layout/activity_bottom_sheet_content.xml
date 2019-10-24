@@ -4,9 +4,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <Button
+        android:id="@+id/open_bottom_sheet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="app content" />
+        android:text="@string/open_bottom_sheet" />
+
+    <Button
+        android:id="@+id/close_bottom_sheet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/close_bottom_sheet" />
+
+    <Button
+        android:id="@+id/hide_bottom_sheet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hide_bottom_sheet" />
 
 </LinearLayout>
