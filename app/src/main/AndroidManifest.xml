@@ -59,6 +59,10 @@
         <activity android:name=".dialogs.MyDialogsActivity"/>
 
         <activity android:name=".connectivity.ConnectivityChangesActivity" >
+        </activity>
+
+        <activity android:name=".bottomsheet.BottomSheetActivity" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

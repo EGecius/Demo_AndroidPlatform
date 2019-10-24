@@ -3,4 +3,7 @@
     <string name="notification_title">Notification title</string>
     <string name="notification_body">Notification body</string>
     <string name="pick_date">Pick date</string>
+    <string name="toolbar_title">Toolbar title</string>
+    <string name="bottom_sheet_peek">Peek</string>
+    <string name="bottom_sheet_content">BottomSheet content</string>
 </resources>
