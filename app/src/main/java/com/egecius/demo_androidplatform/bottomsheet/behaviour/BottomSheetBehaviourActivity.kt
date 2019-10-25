@@ -10,7 +10,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.activity_bottom_sheet_content.*
 import kotlinx.android.synthetic.main.bottom_sheet.*
 
-class BottomSheetActivity : AppCompatActivity() {
+class BottomSheetBehaviourActivity : AppCompatActivity() {
 
     lateinit var bottomSheetBehavior: BottomSheetBehavior<LinearLayout>
 
@@ -30,11 +30,11 @@ class BottomSheetActivity : AppCompatActivity() {
     private fun setupBottomSheetBehaviourListener() {
         bottomSheetBehavior.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
-                Log.v("Eg:BottomSheetActivity:26", "onStateChanged ")
+                Log.v("Eg:BottomSheetBehaviourActivity:26", "onStateChanged ")
             }
 
             override fun onSlide(bottomSheet: View, slideOffset: Float) {
-                Log.v("Eg:BottomSheetActivity:31", "onSlide ")
+                Log.v("Eg:BottomSheetBehaviourActivity:31", "onSlide ")
             }
         })
     }

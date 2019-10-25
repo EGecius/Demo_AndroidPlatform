@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".bottomsheet.behaviour.BottomSheetActivity">
+    tools:context=".bottomsheet.behaviour.BottomSheetBehaviourActivity">
 
     <!-- include main content -->
     <include layout="@layout/activity_bottom_sheet_content" />

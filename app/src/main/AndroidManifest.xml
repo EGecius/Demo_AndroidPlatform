@@ -61,7 +61,7 @@
         <activity android:name=".connectivity.ConnectivityChangesActivity" >
         </activity>
 
-        <activity android:name=".bottomsheet.behaviour.BottomSheetActivity" >
+        <activity android:name=".bottomsheet.behaviour.BottomSheetBehaviourActivity" >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
