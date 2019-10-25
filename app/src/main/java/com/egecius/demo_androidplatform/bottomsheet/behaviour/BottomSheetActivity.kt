@@ -1,4 +1,4 @@
-package com.egecius.demo_androidplatform.bottomsheet
+package com.egecius.demo_androidplatform.bottomsheet.behaviour
 
 import android.os.Bundle
 import android.util.Log
