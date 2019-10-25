@@ -24,9 +24,10 @@ class BottomSheetDialogActivity : AppCompatActivity() {
         }
     }
 
-    @SuppressLint("LongLogTag")
+    @SuppressLint("LongLogTag", "InflateParams")
     private fun showBottomSheetDialog() {
         val dialog = BottomSheetDialog(this)
+        @SuppressLint("InflateParams") // dialog does not need a root view here
         val sheetView = layoutInflater.inflate(R.layout.bottom_sheet, null)
         sheetView.take_action.setOnClickListener {
             Log.v("Eg:BottomSheetDialogActivity:32", "showBottomSheetDialog onClicked 'take action'")
