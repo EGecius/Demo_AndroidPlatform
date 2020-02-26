@@ -10,4 +10,10 @@
         android:text="@string/pick_date"
         android:onClick="showDatePickerDialog" />
 
+    <Button
+        android:text="show alert dialog"
+        android:onClick="showAlertDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 </LinearLayout>
