@@ -72,6 +72,14 @@
         <activity android:name=".bottomsheet.dialog.BottomSheetDialogActivity" >
 
         </activity>
+        <activity android:name=".toolbar.ToolbarInflationActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+        </activity>
 
     </application>
 

@@ -1,19 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pick_date"
-        android:onClick="showDatePickerDialog" />
+        android:onClick="showDatePickerDialog"
+        android:text="@string/pick_date" />
 
     <Button
-        android:text="show alert dialog"
-        android:onClick="showAlertDialog"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:onClick="showAlertDialog"
+        android:text="show alert dialog" />
+
+    <Button
+        android:id="@+id/my_button"
+        android:text="My button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/my_edit_text"
+        android:hint="My EditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/my_edit_text"
+        android:hint="My edittext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
 
 </LinearLayout>
