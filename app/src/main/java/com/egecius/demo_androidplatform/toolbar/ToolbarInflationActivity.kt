@@ -14,7 +14,8 @@ class ToolbarInflationActivity: AppCompatActivity() {
     }
 
     private fun setToolbar() {
-        setSupportActionBar(toolbar)
+//        setSupportActionBar(toolbar)
+        // toolbar.inflateMenu() works only if Toolbar is not used as an ActionBar
         toolbar.inflateMenu(R.menu.toolbar_inflation_menu)
     }
 
