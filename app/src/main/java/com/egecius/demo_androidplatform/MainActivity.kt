@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun printBatteryPercentage() {
         val batteryMonitorImpl = BatteryMonitorImpl(this)
-        val batteryPercentage = batteryMonitorImpl.getBatteryPercentage() ?: -1f
+        val batteryPercentage = batteryMonitorImpl.getBatteryPercentageCurrent()
         showToast(batteryPercentage.toString())
         Log.v("Eg:MainActivity:33", "printBatteryPercentage() batteryPercentage: $batteryPercentage")
     }
