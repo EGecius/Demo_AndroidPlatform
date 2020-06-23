@@ -5,6 +5,8 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.BatteryManager
+import com.egecius.demo_androidplatform.shared.UNKNOWN_FLOAT
+import com.egecius.demo_androidplatform.shared.UNKNOWN_INT
 import io.reactivex.BackpressureStrategy
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.Subject
@@ -14,7 +16,7 @@ import kotlinx.coroutines.reactive.asFlow
 class BatteryMonitorImpl(private val context: Context) : BatteryMonitor {
 
     override fun getPercentageFlow(): Flow<Float> {
-        val subject: Subject<Float> = BehaviorSubject.createDefault(getBatteryPercentageCurrent())
+        val subject: Subject<Float> = BehaviorSubject.createDefault(getBatteryPercentage())
         val receiver = createReceiver(subject)
         registerReceiver(receiver)
 
@@ -23,37 +25,40 @@ class BatteryMonitorImpl(private val context: Context) : BatteryMonitor {
         }.toFlowable(BackpressureStrategy.LATEST).asFlow()
     }
 
-    fun getBatteryPercentageCurrent(): Float {
-        val batteryStatus: Intent? = IntentFilter(Intent.ACTION_BATTERY_CHANGED).let {
+    fun getBatteryPercentage(): Float {
+        val batteryStatusIntent = IntentFilter(Intent.ACTION_BATTERY_CHANGED).let {
             context.registerReceiver(null, it)
         }
-        return batteryStatus?.let {
+        return batteryStatusIntent?.let {
             getBatteryPercentage(it)
-        } ?: -1f
+        } ?: UNKNOWN_FLOAT
     }
 
     private fun getBatteryPercentage(batteryStatus: Intent): Float {
         return batteryStatus.let { intent ->
-            val level: Int = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1)
-            val scale: Int = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1)
-            level * 100 / scale.toFloat()
+            val level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, UNKNOWN_INT)
+            val max = intent.getIntExtra(BatteryManager.EXTRA_SCALE, UNKNOWN_INT).toFloat()
+            (level / max) * PERCENT
         }
     }
 
-    private fun createReceiver(subjectIsConnectedToWifi: Subject<Float>): BroadcastReceiver {
+    private fun createReceiver(subject: Subject<Float>): BroadcastReceiver {
         return object : BroadcastReceiver() {
             override fun onReceive(context: Context, intent: Intent) {
-                subjectIsConnectedToWifi.onNext(getBatteryPercentage(intent))
+                subject.onNext(getBatteryPercentage(intent))
             }
         }
     }
 
     private fun registerReceiver(receiver: BroadcastReceiver) {
-        val intentFilter = IntentFilter(Intent.ACTION_BATTERY_CHANGED)
-        context.registerReceiver(receiver, intentFilter)
+        context.registerReceiver(receiver, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
     }
 
     private fun unregisterReceiver(receiver: BroadcastReceiver) {
         context.unregisterReceiver(receiver)
+    }
+
+    companion object {
+        private const val PERCENT = 100
     }
 }
