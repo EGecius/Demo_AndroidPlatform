@@ -1,9 +1,9 @@
 package com.egecius.demo_androidplatform.battery
 
-import io.reactivex.Observable
+import kotlinx.coroutines.flow.Flow
 
 
 interface BatteryMonitor {
 
-    fun getPercentageObservable(): Observable<Float>
+    fun getPercentageFlow(): Flow<Float>
 }

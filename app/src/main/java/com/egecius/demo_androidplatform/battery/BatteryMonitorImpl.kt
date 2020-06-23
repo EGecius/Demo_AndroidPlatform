@@ -5,20 +5,22 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.BatteryManager
-import io.reactivex.Observable
+import io.reactivex.BackpressureStrategy
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.Subject
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.reactive.asFlow
 
 class BatteryMonitorImpl(private val context: Context) : BatteryMonitor {
 
-    override fun getPercentageObservable(): Observable<Float> {
+    override fun getPercentageFlow(): Flow<Float> {
         val subject: Subject<Float> = BehaviorSubject.createDefault(getBatteryPercentageCurrent())
         val receiver = createReceiver(subject)
         registerReceiver(receiver)
 
         return subject.distinctUntilChanged().doOnDispose {
             unregisterReceiver(receiver)
-        }
+        }.toFlowable(BackpressureStrategy.LATEST).asFlow()
     }
 
     fun getBatteryPercentageCurrent(): Float {
