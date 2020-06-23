@@ -1,4 +1,4 @@
-package com.egecius.demo_androidplatform.extensions
+package com.egecius.demo_androidplatform.shared.extensions
 
 import android.content.Context
 import android.widget.Toast
