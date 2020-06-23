@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.BatteryManager
-import com.egecius.demo_androidplatform.shared.UNKNOWN_FLOAT
 import com.egecius.demo_androidplatform.shared.UNKNOWN_INT
 import io.reactivex.BackpressureStrategy
 import io.reactivex.subjects.BehaviorSubject
@@ -15,8 +14,8 @@ import kotlinx.coroutines.reactive.asFlow
 
 class BatteryMonitorImpl(private val context: Context) : BatteryMonitor {
 
-    override fun getPercentageFlow(): Flow<Float> {
-        val subject: Subject<Float> = BehaviorSubject.createDefault(getBatteryPercentage())
+    override fun getPercentageFlow(): Flow<Int> {
+        val subject: Subject<Int> = BehaviorSubject.createDefault(getBatteryPercentage())
         val receiver = createReceiver(subject)
         registerReceiver(receiver)
 
@@ -25,24 +24,24 @@ class BatteryMonitorImpl(private val context: Context) : BatteryMonitor {
         }.toFlowable(BackpressureStrategy.LATEST).asFlow()
     }
 
-    fun getBatteryPercentage(): Float {
+    fun getBatteryPercentage(): Int {
         val batteryStatusIntent = IntentFilter(Intent.ACTION_BATTERY_CHANGED).let {
             context.registerReceiver(null, it)
         }
         return batteryStatusIntent?.let {
             getBatteryPercentage(it)
-        } ?: UNKNOWN_FLOAT
+        } ?: UNKNOWN_INT
     }
 
-    private fun getBatteryPercentage(batteryStatus: Intent): Float {
+    private fun getBatteryPercentage(batteryStatus: Intent): Int {
         return batteryStatus.let { intent ->
             val level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, UNKNOWN_INT)
-            val max = intent.getIntExtra(BatteryManager.EXTRA_SCALE, UNKNOWN_INT).toFloat()
-            (level / max) * PERCENT
+            val max = intent.getIntExtra(BatteryManager.EXTRA_SCALE, UNKNOWN_INT)
+            (level * PERCENT / max)
         }
     }
 
-    private fun createReceiver(subject: Subject<Float>): BroadcastReceiver {
+    private fun createReceiver(subject: Subject<Int>): BroadcastReceiver {
         return object : BroadcastReceiver() {
             override fun onReceive(context: Context, intent: Intent) {
                 subject.onNext(getBatteryPercentage(intent))

@@ -5,5 +5,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface BatteryMonitor {
 
-    fun getPercentageFlow(): Flow<Float>
+    fun getPercentageFlow(): Flow<Int>
 }
