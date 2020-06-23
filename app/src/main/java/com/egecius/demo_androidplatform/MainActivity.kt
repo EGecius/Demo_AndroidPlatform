@@ -7,7 +7,7 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.egecius.demo_androidplatform.battery.BatteryMonitorImpl
-import com.egecius.demo_androidplatform.extensions.showToast
+import com.egecius.demo_androidplatform.shared.extensions.showToast
 import com.egecius.demo_androidplatform.services.MyIntentService
 import com.egecius.demo_androidplatform.services.MyJobIntentService
 import com.egecius.demo_androidplatform.services.MyJobSchedulerHelper
