@@ -7,7 +7,6 @@ import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.net.ConnectivityManager.TYPE_WIFI
 import android.net.NetworkInfo
-import com.egecius.demo_androidplatform.internet.ConnectivityMonitor
 import io.reactivex.Observable
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.Subject
@@ -33,7 +32,7 @@ class ConnectivityMonitorImpl(private val context: Context) : ConnectivityMonito
     private fun createInternetReceiver(subjectIsConnectedToInternet: Subject<Boolean>): BroadcastReceiver {
         return object : BroadcastReceiver() {
             override fun onReceive(context: Context, intent: Intent) {
-                subjectIsConnectedToInternet.onNext(isConnectedToWifi())
+                subjectIsConnectedToInternet.onNext(isConnectedToInternet())
             }
         }
     }
