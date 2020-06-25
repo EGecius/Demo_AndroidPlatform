@@ -6,12 +6,12 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.egecius.demo_androidplatform.battery.BatteryMonitorImpl
+import com.egecius.demo_androidplatform.internet.ConnectivityMonitorImpl
+import com.egecius.demo_androidplatform.internet.IsInternetConnectedInteractor
 import com.egecius.demo_androidplatform.services.MyIntentService
 import com.egecius.demo_androidplatform.services.MyJobIntentService
 import com.egecius.demo_androidplatform.services.MyJobSchedulerHelper
 import com.egecius.demo_androidplatform.services.MyService
-import com.egecius.demo_androidplatform.shared.extensions.showToast
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -27,18 +27,14 @@ class MainActivity : AppCompatActivity() {
 
         setOnClickListener()
 
-        printBatteryPercentage()
+        printInternetConnectivity()
     }
 
-    private fun printBatteryPercentage() {
-        val batteryMonitorImpl = BatteryMonitorImpl(this)
-        val snapshot = batteryMonitorImpl.getBatteryPercentage()
-        showToast(snapshot.toString())
-        Log.v("Eg:MainActivity:33", "printBatteryPercentage() snapshot percentage: $snapshot")
-
+    private fun printInternetConnectivity() {
+        val interactor = IsInternetConnectedInteractor(ConnectivityMonitorImpl(applicationContext))
         GlobalScope.launch {
-            batteryMonitorImpl.getPercentageFlow().collect {
-                Log.d("Eg:MainActivity:41", "printBatteryPercentage() updated percentage: $it")
+            interactor.getFlow().collect { isConnected ->
+                Log.v("Eg:MainActivity:37", "printInternetConnectivity() isConnected: $isConnected")
             }
         }
     }
