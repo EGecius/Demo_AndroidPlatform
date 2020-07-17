@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun printInternetConnectivity() {
+    	Log.v("Eg:MainActivity:34", "printInternetConnectivity()")
         val interactor = IsInternetConnectedInteractor(ConnectivityMonitorImpl(applicationContext))
         GlobalScope.launch {
             interactor.getFlow().collect { isConnected ->
