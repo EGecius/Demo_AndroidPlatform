@@ -1,55 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.egecius.demo_androidplatform.MainActivity">
 
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter text"
+        android:imeOptions="actionDone"
+        android:singleLine="true"/>
 
     <Button
         android:id="@+id/start_job_intent_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start JobScheduler"/>
-
+        android:text="Start JobScheduler" />
 
     <Button
         android:id="@+id/start_job_scheduler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start JobScheduler"/>
+        android:text="Start JobScheduler" />
 
     <Button
         android:id="@+id/start_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start Service"/>
+        android:text="Start Service" />
 
     <Button
         android:id="@+id/start_intent_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start IntentService"/>
+        android:text="Start IntentService" />
 
     <Button
         android:id="@+id/send_notification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send notification"/>
+        android:text="Send notification" />
 
     <Button
         android:id="@+id/show_dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show dialog"/>
+        android:text="Show dialog" />
 
     <Button
         android:id="@+id/activity_for_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start Activity for result"/>
+        android:text="Start Activity for result" />
 
 
 </LinearLayout>
