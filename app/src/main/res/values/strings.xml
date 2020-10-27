@@ -11,4 +11,5 @@
     <string name="hide_bottom_sheet">Hide bottom sheet</string>
     <string name="take_action">Take action</string>
     <string name="open_bottom_sheet_dialog">Open bottom sheet dialog</string>
+    <string name="bigger_smaller">Bigger smaller</string>
 </resources>
